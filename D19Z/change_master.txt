@@ -1,0 +1,5 @@
+change master to master_host='127.0.0.1', 
+master_port=3307, master_user='repl', 
+master_password='123lalala', 
+master_log_file='aminglinux2.000003', 
+master_log_pos=652867;

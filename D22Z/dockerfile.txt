@@ -1,0 +1,19 @@
+## Set the base image to CentOS
+FROM centos:7
+# File Author / Maintainer
+MAINTAINER aming aming@aminglinux.com
+# Install necessary tools
+RUN yum install -y pcre-devel wget net-tools gcc zlib zlib-devel make openssl-devel
+# Install Nginx
+ADD http://nginx.org/download/nginx-1.8.0.tar.gz .
+RUN tar zxvf nginx-1.8.0.tar.gz
+RUN mkdir -p /usr/local/nginx
+RUN cd nginx-1.8.0 && ./configure --prefix=/usr/local/nginx && make && make install
+RUN rm -fv /usr/local/nginx/conf/nginx.conf
+ADD http://www.apelearn.com/study_v2/.nginx_conf /usr/local/nginx/conf/nginx.conf
+# Expose ports
+EXPOSE 80
+# mount point
+VOLUME ["/usr/local/nginx/html"]
+# Set the default command to execute when creating a new container
+ENTRYPOINT /usr/local/nginx/sbin/nginx && tail -f /usr/local/nginx/logs/nginx_error.log

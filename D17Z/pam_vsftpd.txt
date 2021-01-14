@@ -1,0 +1,2 @@
+auth sufficient /lib64/security/pam_userdb.so db=/etc/vsftpd/vsftpd_login
+account sufficient /lib64/security/pam_userdb.so db=/etc/vsftpd/vsftpd_login

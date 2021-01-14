@@ -1,0 +1,5 @@
+JAVA_HOME=/usr/local/jdk1.8/
+JAVA_BIN=/usr/local/jdk1.8/bin
+JRE_HOME=/usr/local/jdk1.8/jre
+PATH=$PATH:/usr/local/jdk1.8/bin:/usr/local/jdk1.8/jre/bin
+CLASSPATH=/usr/local/jdk1.8/jre/lib:/usr/local/jdk1.8/lib:/usr/local/jdk1.8/jre/lib/charsets.jar

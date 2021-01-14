@@ -1,0 +1,20 @@
+(1) 用awk打印整个test.txt。（以下操作都是针对test.txt的，用awk工具实现）
+(2) 查找所有包含“bash”的行。
+(3) 用“:”作为分隔符，查找第3个字段等于0的行。
+(4) 用“:”作为分隔符，查找第1个字段为“root”的行，并把该段的“root”换成“toor”。（可以连同sed一起使用）
+(5) 用“:”作为分隔符，打印最后一个字段。
+(6) 打印行数大于20的所有行。
+(7) 用“:”作为分隔符，打印所有第3个字段小于第4个字段的行。
+(8) 用“:”作为分隔符，打印第1个字段以及最后一个字段，并且中间用“@”连接（例如，第1行应该是这样的形式：“root@/bin/bash”）
+(9) 用“:”作为分隔符，把整个文档的第4个字段相加，求和。
+下面是以上习题的答案，仅作参考。
+(1) awk '{print $0}' test.txt
+(2) awk '/bash/' test.txt
+(3) awk -F':' '$3=="0"' test.txt
+(4) awk -F':' '$1=="root"' test.txt |sed 's/root/toor/'
+(5) awk -F':' '{print $NF}' test.txt
+(6) awk -F':' 'NR>20' test.txt
+(7) awk -F':' '$3<$4' test.txt
+(8) awk -F':' '{print $1"@"$NF}' test.txt
+(9) awk -F':' '{(sum+=$4)}; END {print sum}' test.txt
+

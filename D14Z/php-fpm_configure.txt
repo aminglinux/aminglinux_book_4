@@ -1,0 +1,25 @@
+./configure \
+--prefix=/usr/local/php-fpm \
+--with-config-file-path=/usr/local/php-fpm/etc \
+--enable-fpm \
+--with-fpm-user=php-fpm \
+--with-fpm-group=php-fpm \
+--with-mysql=/usr/local/mysql \
+--with-mysql-sock=/tmp/mysql.sock \
+--with-libxml-dir \
+--with-gd \
+--with-jpeg-dir \
+--with-png-dir \
+--with-freetype-dir \
+--with-iconv-dir \
+--with-zlib-dir \
+--with-mcrypt \
+--enable-soap \
+--enable-gd-native-ttf \
+--enable-ftp \
+--enable-mbstring \
+--enable-exif \
+--disable-ipv6 \
+--with-pear \
+--with-curl \
+--with-openssl

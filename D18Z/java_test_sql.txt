@@ -1,0 +1,7 @@
+mysql> create database java_test;
+mysql> use java_test
+mysql> grant all on java_test.* to 'java'@'127.0.0.1' identified by 'aminglinux';
+mysql> create table aminglinux (`id` int(4), `name` char(40));
+mysql> insert into aminglinux values (1, 'abc');
+mysql> insert into aminglinux values (2, 'aaa');
+mysql> insert into aminglinux values (3, 'ccc');
